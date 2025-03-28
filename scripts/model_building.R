@@ -1,0 +1,11 @@
+mod_complet <-  glm(output~.,data=heart,family=binomial) 
+summary(mod_complet)
+mod_1 <- glm(output~sex+cp+thalachh+exng+oldpeak+caa+thall,data=heart,family=
+ binomial) 
+summary(mod_1) 
+model<-glm(output~.,data=heart) 
+step.back.AIC<-step(model,direction="backward")
+model.inter1<-glm(output~age:thalachh,data=heart) 
+summary(model.inter1) 
+model.inter2<-glm(output~oldpeak:restecg,data=heart) 
+summary(model.inter2)
